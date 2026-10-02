@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Expand } from "lucide-react";
 import type { GalleryImage } from "@/types/project";
 import ImageLightbox from "./ImageLightbox";
+import { withBase } from "@/utils/base";
 
 export default function ProjectGallery({ images }: { images?: GalleryImage[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -19,7 +20,7 @@ export default function ProjectGallery({ images }: { images?: GalleryImage[] }) 
             aria-label={`Expand image: ${img.alt}`}
           >
             <img
-              src={img.src}
+              src={withBase(img.src)}
               alt={img.alt}
               loading="lazy"
               className="h-full w-full object-cover transition-transform duration-[400ms] ease-premium group-hover:scale-105"

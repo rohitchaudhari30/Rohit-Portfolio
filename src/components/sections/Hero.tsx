@@ -6,6 +6,7 @@ import Container from "@/components/ui/Container";
 import LinkButton from "@/components/ui/LinkButton";
 import SocialLinks from "@/components/common/SocialLinks";
 import Magnetic from "@/components/common/Magnetic";
+import { withBase } from "@/utils/base";
 
 const container = {
   hidden: {},
@@ -58,7 +59,7 @@ export default function Hero() {
                   View My Work <ArrowRight size={16} />
                 </LinkButton>
               </Magnetic>
-              <LinkButton href={personal.resumeUrl} variant="secondary">
+              <LinkButton href={withBase(personal.resumeUrl)} variant="secondary">
                 <Download size={16} /> Download Resume
               </LinkButton>
               <LinkButton href="#contact" variant="ghost">
@@ -99,7 +100,7 @@ export default function Hero() {
               <div className="relative h-full w-full overflow-hidden rounded-full border-2 border-ink-950 bg-ink-800 shadow-card">
                 {showPhoto ? (
                   <img
-                    src={personal.profileImage}
+                    src={withBase(personal.profileImage)}
                     alt={personal.name}
                     className="h-full w-full object-cover"
                     loading="eager"

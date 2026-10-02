@@ -9,6 +9,7 @@ import Icon from "@/components/common/Icon";
 import CaseStudySection from "@/components/projects/CaseStudySection";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 import ProjectToc from "@/components/projects/ProjectToc";
+import { withBase } from "@/utils/base";
 
 function CheckList({ items }: { items: string[] }) {
   return (
@@ -297,7 +298,7 @@ export default function ProjectDetailPage() {
 
           {project.coverImage && (
             <div className="mt-10 overflow-hidden rounded-xl border border-ink-border shadow-card">
-              <img src={project.coverImage} alt={`${project.title} cover`} className="w-full object-cover" />
+              <img src={withBase(project.coverImage)} alt={`${project.title} cover`} className="w-full object-cover" />
             </div>
           )}
         </Container>

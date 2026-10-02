@@ -4,6 +4,7 @@ import { ArrowUpRight, Github, ImageOff, Building2 } from "lucide-react";
 import type { Project } from "@/types/project";
 import Badge from "@/components/ui/Badge";
 import { useSpotlight } from "@/hooks/useSpotlight";
+import { withBase } from "@/utils/base";
 
 const statusColor: Record<Project["status"], string> = {
   Live: "text-emerald-400",
@@ -33,7 +34,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
         <div className="relative aspect-[16/10] overflow-hidden bg-ink-900">
           {project.coverImage ? (
             <img
-              src={project.coverImage}
+              src={withBase(project.coverImage)}
               alt={`${project.title} cover`}
               loading="lazy"
               className="h-full w-full object-cover transition-transform duration-500 ease-premium group-hover:scale-[1.04]"

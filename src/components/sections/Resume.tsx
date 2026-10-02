@@ -2,6 +2,7 @@ import { FileText, Eye, Download } from "lucide-react";
 import { personal } from "@/data/personal";
 import Container from "@/components/ui/Container";
 import LinkButton from "@/components/ui/LinkButton";
+import { withBase } from "@/utils/base";
 
 export default function Resume() {
   const hasResume = Boolean(personal.resumeUrl);
@@ -25,10 +26,10 @@ export default function Resume() {
           <div className="flex flex-shrink-0 gap-3">
             {hasResume ? (
               <>
-                <LinkButton href={personal.resumeUrl} target="_blank" variant="secondary" aria-label="View resume">
+                <LinkButton href={withBase(personal.resumeUrl)} target="_blank" variant="secondary" aria-label="View resume">
                   <Eye size={16} /> View
                 </LinkButton>
-                <LinkButton href={personal.resumeUrl} download variant="primary" aria-label="Download resume">
+                <LinkButton href={withBase(personal.resumeUrl)} download variant="primary" aria-label="Download resume">
                   <Download size={16} /> Download
                 </LinkButton>
               </>

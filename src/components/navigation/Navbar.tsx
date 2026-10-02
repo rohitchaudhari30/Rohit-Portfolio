@@ -9,6 +9,7 @@ import LinkButton from "@/components/ui/LinkButton";
 import ThemeToggle from "@/components/common/ThemeToggle";
 import MobileMenu from "./MobileMenu";
 import { useActiveSection } from "@/hooks/useActiveSection";
+import { withBase } from "@/utils/base";
 
 const sectionIds = navigation.map((item) => item.href.replace("#", ""));
 
@@ -75,7 +76,7 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
-          <LinkButton href={personal.resumeUrl} variant="secondary" className="text-xs">
+          <LinkButton href={withBase(personal.resumeUrl)} variant="secondary" className="text-xs">
             Resume
           </LinkButton>
         </div>

@@ -7,6 +7,7 @@ import SocialLinks from "@/components/common/SocialLinks";
 import ThemeToggle from "@/components/common/ThemeToggle";
 import LinkButton from "@/components/ui/LinkButton";
 import { personal } from "@/data/personal";
+import { withBase } from "@/utils/base";
 
 interface MobileMenuProps {
   open: boolean;
@@ -80,7 +81,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             ))}
           </motion.nav>
           <div className="mt-8 flex flex-col gap-4 px-8 pb-10">
-            <LinkButton href={personal.resumeUrl} variant="secondary" onClick={onClose}>
+            <LinkButton href={withBase(personal.resumeUrl)} variant="secondary" onClick={onClose}>
               Resume
             </LinkButton>
             <div className="flex items-center justify-between">

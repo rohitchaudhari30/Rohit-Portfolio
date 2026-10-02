@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import type { GalleryImage } from "@/types/project";
+import { withBase } from "@/utils/base";
 
 interface LightboxProps {
   images: GalleryImage[];
@@ -68,7 +69,7 @@ export default function ImageLightbox({ images, index, onClose, onNavigate }: Li
             animate={{ opacity: 1, scale: 1 }}
             className="max-h-[85vh] max-w-4xl"
           >
-            <img src={current.src} alt={current.alt} className="max-h-[80vh] w-full rounded-md object-contain" />
+            <img src={withBase(current.src)} alt={current.alt} className="max-h-[80vh] w-full rounded-md object-contain" />
             {current.caption && (
               <figcaption className="mt-3 text-center text-sm text-paper-400">{current.caption}</figcaption>
             )}

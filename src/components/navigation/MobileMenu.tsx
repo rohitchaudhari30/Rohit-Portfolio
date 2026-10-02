@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, type MouseEvent } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { navigation } from "@/data/navigation";
 import SocialLinks from "@/components/common/SocialLinks";
 import ThemeToggle from "@/components/common/ThemeToggle";
@@ -15,6 +16,9 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -33,6 +37,21 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, [onClose]);
+
+  function handleNavClick(e: MouseEvent, href: string) {
+    e.preventDefault();
+    onClose();
+    const id = href.replace("#", "");
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+    } else {
+      const elem = document.getElementById(id);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", href);
+      }
+    }
+  }
 
   return createPortal(
     <AnimatePresence>
@@ -72,7 +91,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               <motion.a
                 key={item.href}
                 href={item.href}
-                onClick={onClose}
+                onClick={(e) => handleNavClick(e, item.href)}
                 variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
                 className="border-b border-ink-border py-4 font-display text-2xl text-paper-100 hover:text-signal"
               >

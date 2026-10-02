@@ -1,7 +1,7 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { navigation } from "@/data/navigation";
 import { personal } from "@/data/personal";
 import Container from "@/components/ui/Container";
@@ -29,9 +29,16 @@ export default function Navbar() {
   }, []);
 
   function handleNavClick(e: MouseEvent, href: string) {
+    e.preventDefault();
+    const id = href.replace("#", "");
     if (location.pathname !== "/") {
-      e.preventDefault();
       navigate("/" + href);
+    } else {
+      const elem = document.getElementById(id);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", href);
+      }
     }
   }
 
@@ -44,10 +51,10 @@ export default function Navbar() {
       }`}
     >
       <Container className="flex h-16 items-center justify-between">
-        <a href="/" className="font-display text-lg font-semibold tracking-tight text-paper-100">
+        <Link to="/" className="font-display text-lg font-semibold tracking-tight text-paper-100">
           {personal.name.split(" ")[0]}
           <span className="text-signal">.</span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-0.5 md:flex" aria-label="Primary">
           {navigation.map((item) => {

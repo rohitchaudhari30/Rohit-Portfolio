@@ -1,16 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { ThemeProvider } from "./context/ThemeContext";
 import "./index.css";
 
+const basename = import.meta.env.MODE === "production" ? "/Rohit-Portfolio" : "/";
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider>
-      <HashRouter>
+      <BrowserRouter basename={basename}>
         <App />
-      </HashRouter>
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
 );

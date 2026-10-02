@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="s2bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141B26"/>
+      <stop offset="100%" stop-color="#0A0D12"/>
+    </linearGradient>
+    <radialGradient id="s2glow" cx="25%" cy="15%" r="55%">
+      <stop offset="0%" stop-color="#D4A24E" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#D4A24E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#s2bg)"/>
+  <rect width="800" height="500" fill="url(#s2glow)"/>
+
+  <!-- app window -->
+  <rect x="40" y="40" width="720" height="430" rx="14" fill="#10151F" stroke="#232C3B"/>
+  <rect x="40" y="40" width="720" height="46" rx="14" fill="#141B26"/>
+  <rect x="40" y="72" width="720" height="14" fill="#141B26"/>
+  <circle cx="66" cy="63" r="5" fill="#2A3444"/>
+  <circle cx="84" cy="63" r="5" fill="#2A3444"/>
+  <circle cx="102" cy="63" r="5" fill="#2A3444"/>
+  <rect x="330" y="55" width="140" height="16" rx="8" fill="#1A2230"/>
+  <text x="352" y="67" font-family="ui-monospace, monospace" font-size="10" fill="#6B7889">docuvision.app/parse</text>
+
+  <!-- left: document preview panel -->
+  <rect x="64" y="110" width="290" height="336" rx="12" fill="#0D1117" stroke="#232C3B"/>
+  <text x="84" y="136" font-family="ui-monospace, monospace" font-size="10" fill="#8A6A34" letter-spacing="1">UPLOADED DOCUMENT</text>
+  <rect x="84" y="152" width="250" height="270" rx="8" fill="#151C28" stroke="#2A3444"/>
+  <rect x="104" y="172" width="90" height="8" rx="4" fill="#5A6473"/>
+  <rect x="104" y="192" width="150" height="5" rx="2.5" fill="#3A4457"/>
+  <rect x="104" y="204" width="130" height="5" rx="2.5" fill="#3A4457"/>
+  <rect x="104" y="228" width="70" height="70" rx="8" fill="#0A0D12" stroke="#2A3444"/>
+  <circle cx="139" cy="263" r="18" fill="none" stroke="#3A4457" stroke-width="2"/>
+  <rect x="184" y="234" width="140" height="5" rx="2.5" fill="#3A4457"/>
+  <rect x="184" y="246" width="120" height="5" rx="2.5" fill="#3A4457"/>
+  <rect x="184" y="258" width="130" height="5" rx="2.5" fill="#3A4457"/>
+  <rect x="104" y="320" width="220" height="5" rx="2.5" fill="#3A4457"/>
+  <rect x="104" y="334" width="180" height="5" rx="2.5" fill="#3A4457"/>
+  <!-- scan sweep line -->
+  <rect x="84" y="150" width="250" height="3" fill="#E6B563" opacity="0.9"/>
+  <rect x="84" y="150" width="250" height="40" fill="#D4A24E" opacity="0.08"/>
+  <rect x="104" y="398" width="90" height="24" rx="6" fill="none" stroke="#8A6A34" stroke-width="1.5"/>
+  <text x="118" y="414" font-family="ui-monospace, monospace" font-size="10" fill="#D4A24E">10th_marksheet.jpg</text>
+
+  <!-- arrow -->
+  <path d="M366 278 h34" stroke="#D4A24E" stroke-width="2"/>
+  <path d="M392 271 l10 7 l-10 7 Z" fill="#D4A24E"/>
+
+  <!-- right: extracted structured fields -->
+  <rect x="416" y="110" width="320" height="336" rx="12" fill="#0D1117" stroke="#D4A24E" stroke-opacity="0.4"/>
+  <text x="436" y="136" font-family="ui-monospace, monospace" font-size="10" fill="#8A6A34" letter-spacing="1">EXTRACTED FIELDS</text>
+
+  <g font-family="ui-monospace, monospace" font-size="10">
+    <rect x="436" y="152" width="280" height="50" rx="8" fill="#141B26" stroke="#232C3B"/>
+    <text x="452" y="171" fill="#8A6A34">STUDENT NAME</text>
+    <rect x="452" y="178" width="140" height="6" rx="3" fill="#C7CFD9"/>
+
+    <rect x="436" y="212" width="280" height="50" rx="8" fill="#141B26" stroke="#232C3B"/>
+    <text x="452" y="231" fill="#8A6A34">ROLL NUMBER</text>
+    <rect x="452" y="238" width="110" height="6" rx="3" fill="#C7CFD9"/>
+
+    <rect x="436" y="272" width="280" height="50" rx="8" fill="#141B26" stroke="#232C3B"/>
+    <text x="452" y="291" fill="#8A6A34">BOARD / YEAR</text>
+    <rect x="452" y="298" width="160" height="6" rx="3" fill="#C7CFD9"/>
+
+    <rect x="436" y="332" width="280" height="50" rx="8" fill="#141B26" stroke="#D4A24E" stroke-width="1.2"/>
+    <path d="M452 358 l6 6 l12 -12" stroke="#D4A24E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="476" y="361" fill="#93A1B0">Validated JSON response</text>
+  </g>
+
+  <rect x="596" y="396" width="120" height="30" rx="8" fill="#D4A24E"/>
+  <text x="618" y="416" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0A0D12">Confirm</text>
+</svg>

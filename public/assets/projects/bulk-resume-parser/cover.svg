@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="s3bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141B26"/>
+      <stop offset="100%" stop-color="#0A0D12"/>
+    </linearGradient>
+    <radialGradient id="s3glow" cx="80%" cy="15%" r="55%">
+      <stop offset="0%" stop-color="#D4A24E" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#D4A24E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#s3bg)"/>
+  <rect width="800" height="500" fill="url(#s3glow)"/>
+
+  <!-- app window -->
+  <rect x="40" y="40" width="720" height="430" rx="14" fill="#10151F" stroke="#232C3B"/>
+  <rect x="40" y="40" width="720" height="46" rx="14" fill="#141B26"/>
+  <rect x="40" y="72" width="720" height="14" fill="#141B26"/>
+  <circle cx="66" cy="63" r="5" fill="#2A3444"/>
+  <circle cx="84" cy="63" r="5" fill="#2A3444"/>
+  <circle cx="102" cy="63" r="5" fill="#2A3444"/>
+  <rect x="330" y="55" width="140" height="16" rx="8" fill="#1A2230"/>
+  <text x="352" y="67" font-family="ui-monospace, monospace" font-size="10" fill="#6B7889">resumes.app/bulk-upload</text>
+
+  <!-- header row -->
+  <text x="70" y="122" font-family="system-ui, sans-serif" font-size="18" font-weight="600" fill="#F4F6F8">Candidates — Data Engineer</text>
+  <rect x="620" y="102" width="120" height="30" rx="7" fill="#D4A24E"/>
+  <text x="638" y="122" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0A0D12">Upload Files</text>
+
+  <!-- dropzone strip -->
+  <rect x="70" y="140" width="670" height="44" rx="8" fill="#141B26" stroke="#3A4457" stroke-dasharray="5 4"/>
+  <circle cx="90" cy="162" r="4" fill="#D4A24E"/>
+  <text x="104" y="166" font-family="ui-monospace, monospace" font-size="11" fill="#93A1B0">12 files queued — parsing concurrently…</text>
+  <rect x="640" y="152" width="80" height="20" rx="10" fill="#3A2E13"/>
+  <text x="652" y="166" font-family="ui-monospace, monospace" font-size="10" fill="#E6B563">8 / 12</text>
+
+  <!-- table -->
+  <g font-family="ui-monospace, monospace" font-size="10" fill="#8A6A34">
+    <text x="86" y="204">NAME</text>
+    <text x="256" y="204">ROLE</text>
+    <text x="396" y="204">EXPERIENCE</text>
+    <text x="516" y="204">LOCATION</text>
+    <text x="636" y="204">STATUS</text>
+  </g>
+  <rect x="70" y="212" width="670" height="1" fill="#232C3B"/>
+
+  <g font-family="system-ui, sans-serif" font-size="12" fill="#C7CFD9">
+    <text x="86" y="238">Priya Nair</text>
+    <text x="256" y="238">Backend Developer</text>
+    <text x="396" y="238">4 yrs</text>
+    <text x="516" y="238">Pune</text>
+    <rect x="630" y="224" width="60" height="20" rx="10" fill="#22301F"/>
+    <text x="642" y="238" font-family="ui-monospace, monospace" font-size="10" fill="#7CC98A">parsed</text>
+
+    <rect x="70" y="252" width="670" height="1" fill="#1A2230"/>
+    <text x="86" y="278">Arjun Mehta</text>
+    <text x="256" y="278">Data Engineer</text>
+    <text x="396" y="278">6 yrs</text>
+    <text x="516" y="278">Bengaluru</text>
+    <rect x="630" y="264" width="60" height="20" rx="10" fill="#22301F"/>
+    <text x="642" y="278" font-family="ui-monospace, monospace" font-size="10" fill="#7CC98A">parsed</text>
+
+    <rect x="70" y="292" width="670" height="1" fill="#1A2230"/>
+    <text x="86" y="318" fill="#93A1B0">Sana Sheikh</text>
+    <text x="256" y="318" fill="#93A1B0">—</text>
+    <text x="396" y="318" fill="#93A1B0">—</text>
+    <text x="516" y="318" fill="#93A1B0">—</text>
+    <rect x="622" y="304" width="76" height="20" rx="10" fill="#3A2E13"/>
+    <text x="634" y="318" font-family="ui-monospace, monospace" font-size="10" fill="#E6B563">OCR pass</text>
+
+    <rect x="70" y="332" width="670" height="1" fill="#1A2230"/>
+    <text x="86" y="358" fill="#5A6473">Devika Rao</text>
+    <text x="256" y="358" fill="#5A6473">—</text>
+    <text x="396" y="358" fill="#5A6473">—</text>
+    <text x="516" y="358" fill="#5A6473">—</text>
+    <rect x="628" y="344" width="64" height="20" rx="10" fill="#1A2230"/>
+    <text x="640" y="358" font-family="ui-monospace, monospace" font-size="10" fill="#6B7889">queued</text>
+  </g>
+
+  <!-- footer summary -->
+  <rect x="70" y="392" width="670" height="1" fill="#232C3B"/>
+  <text x="70" y="420" font-family="ui-monospace, monospace" font-size="11" fill="#6B7889">Background writer: 8 saved to SQL Server · 4 pending</text>
+</svg>

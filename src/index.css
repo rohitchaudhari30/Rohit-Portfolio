@@ -1,0 +1,196 @@
+@import "./styles/themes.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-ink-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--c-ink-950));
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  /* Scoped grid texture — used only behind the hero, not site-wide */
+  .bg-grid-texture {
+    background-image:
+      linear-gradient(rgb(var(--c-signal) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--c-signal) / 0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 90%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 90%);
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-paper-100;
+  }
+
+  a {
+    @apply text-inherit;
+  }
+
+  ::selection {
+    background: rgb(var(--c-signal) / 0.3);
+    color: rgb(var(--c-paper-100));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--c-signal));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--c-ink-950));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--c-ink-600));
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--c-signal-dim));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.18em] uppercase text-signal;
+  }
+
+  /* Elevated card surface: subtle gradient + real shadow instead of a flat fill */
+  .surface {
+    @apply relative rounded-xl border border-ink-border bg-ink-800 shadow-card;
+    background-image: linear-gradient(160deg, rgb(var(--c-ink-700) / 0.5), rgb(var(--c-ink-800) / 0.2));
+  }
+
+  .container-content {
+    @apply mx-auto max-w-content px-5 sm:px-8 lg:px-10;
+  }
+
+  /* Thin gradient rule used to close out sections instead of a flat border line */
+  .fade-rule {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(var(--c-ink-border)) 20%,
+      rgb(var(--c-ink-border)) 80%,
+      transparent
+    );
+  }
+
+  /* Cursor-reactive highlight — paired with useSpotlight(). Content inside
+     a spotlight card should have `relative z-10` so it paints above the glow. */
+  .spotlight {
+    position: relative;
+    isolation: isolate;
+  }
+  .spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      480px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      rgb(var(--c-signal) / 0.14),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+}
+
+/* ---- Leaflet map: restyled to match the active theme instead of default UI chrome ---- */
+.leaflet-container {
+  background: rgb(var(--c-ink-900)) !important;
+  font-family: theme("fontFamily.body");
+}
+.leaflet-control-zoom {
+  border: 1px solid rgb(var(--c-ink-border)) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 24px -12px rgba(0, 0, 0, var(--shadow-strength)) !important;
+}
+.leaflet-control-zoom a {
+  background: rgb(var(--c-ink-800)) !important;
+  color: rgb(var(--c-paper-200)) !important;
+  border-color: rgb(var(--c-ink-border)) !important;
+}
+.leaflet-control-zoom a:hover {
+  background: rgb(var(--c-ink-700)) !important;
+  color: rgb(var(--c-signal)) !important;
+}
+.leaflet-control-attribution {
+  background: rgb(var(--c-ink-900) / 0.85) !important;
+  color: rgb(var(--c-paper-500)) !important;
+  border-radius: 6px 0 0 0;
+}
+.leaflet-control-attribution a {
+  color: rgb(var(--c-paper-400)) !important;
+}
+.leaflet-popup-content-wrapper {
+  background: rgb(var(--c-ink-800)) !important;
+  color: rgb(var(--c-paper-200)) !important;
+  border: 1px solid rgb(var(--c-ink-border));
+  border-radius: 10px !important;
+  box-shadow: 0 16px 40px -16px rgba(0, 0, 0, var(--shadow-strength));
+}
+.leaflet-popup-tip {
+  background: rgb(var(--c-ink-800)) !important;
+}
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+  font-family: theme("fontFamily.body");
+  font-size: 13px;
+}
+
+.pin-marker {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.pin-marker__core {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgb(var(--c-signal));
+  box-shadow: 0 0 0 4px rgb(var(--c-signal) / 0.22);
+}
+.pin-marker__ping {
+  position: absolute;
+  inset: -8px;
+  border-radius: 999px;
+  border: 1.5px solid rgb(var(--c-signal) / 0.55);
+  animation: mapPing 2.4s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+}
+@keyframes mapPing {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pin-marker__ping { animation: none; opacity: 0.4; }
+}

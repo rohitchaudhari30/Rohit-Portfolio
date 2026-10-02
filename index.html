@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth" data-theme="amber">
+  <head>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("portfolio-theme");
+          if (stored) document.documentElement.setAttribute("data-theme", stored);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohit Chaudhari — Data Engineer Portfolio</title>
+    <meta
+      name="description"
+      content="Rohit Chaudhari is a Data Engineer building ETL pipelines, production AI tools, and Power BI dashboards. Explore case studies, skills, and experience."
+    />
+    <meta name="theme-color" content="#0A0D12" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rohit Chaudhari — Data Engineer Portfolio" />
+    <meta
+      property="og:description"
+      content="Data Engineer building ETL pipelines, production AI tools, and Power BI dashboards that turn raw data into decisions."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://example.com" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rohit Chaudhari — Data Engineer Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Data Engineer building ETL pipelines, production AI tools, and Power BI dashboards that turn raw data into decisions."
+    />
+
+    <link rel="canonical" href="https://example.com" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rohit Chaudhari",
+        "jobTitle": "Data Engineer",
+        "url": "https://example.com",
+        "sameAs": ["https://github.com/rohitchaudhari30", "https://www.linkedin.com/in/rohitchaudhari24"]
+      }
+    </script>
+  </head>
+  <body class="bg-ink-950 text-paper-100 font-body antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

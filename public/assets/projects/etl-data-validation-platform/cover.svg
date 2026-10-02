@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="s6bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141B26"/>
+      <stop offset="100%" stop-color="#0A0D12"/>
+    </linearGradient>
+    <radialGradient id="s6glow" cx="70%" cy="10%" r="60%">
+      <stop offset="0%" stop-color="#D4A24E" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#D4A24E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#s6bg)"/>
+  <rect width="800" height="500" fill="url(#s6glow)"/>
+
+  <rect x="40" y="40" width="720" height="430" rx="14" fill="#10151F" stroke="#232C3B"/>
+  <rect x="40" y="40" width="720" height="46" rx="14" fill="#141B26"/>
+  <rect x="40" y="72" width="720" height="14" fill="#141B26"/>
+  <circle cx="66" cy="63" r="5" fill="#2A3444"/>
+  <circle cx="84" cy="63" r="5" fill="#2A3444"/>
+  <circle cx="102" cy="63" r="5" fill="#2A3444"/>
+  <rect x="330" y="55" width="140" height="16" rx="8" fill="#1A2230"/>
+  <text x="345" y="67" font-family="ui-monospace, monospace" font-size="10" fill="#6B7889">analytics.app/dashboard</text>
+
+  <!-- top stat cards: revenue, margin, validation -->
+  <g font-family="ui-monospace, monospace" font-size="10">
+    <rect x="64" y="106" width="200" height="72" rx="10" fill="#141B26" stroke="#232C3B"/>
+    <text x="82" y="130" fill="#8A6A34">YoY REVENUE</text>
+    <text x="82" y="158" font-family="system-ui, sans-serif" font-size="20" font-weight="600" fill="#F4F6F8">+18.4%</text>
+
+    <rect x="280" y="106" width="200" height="72" rx="10" fill="#141B26" stroke="#232C3B"/>
+    <text x="298" y="130" fill="#8A6A34">GROSS MARGIN</text>
+    <text x="298" y="158" font-family="system-ui, sans-serif" font-size="20" font-weight="600" fill="#F4F6F8">34.2%</text>
+
+    <rect x="496" y="106" width="240" height="72" rx="10" fill="#141B26" stroke="#D4A24E" stroke-width="1.2"/>
+    <text x="514" y="130" fill="#8A6A34">QA CYCLE TIME</text>
+    <text x="514" y="158" font-family="system-ui, sans-serif" font-size="20" font-weight="600" fill="#D4A24E">-70%</text>
+  </g>
+
+  <!-- bar chart -->
+  <g>
+    <rect x="64" y="204" width="330" height="150" rx="12" fill="#141B26" stroke="#232C3B"/>
+    <text x="84" y="228" font-family="ui-monospace, monospace" font-size="10" fill="#6B7889" letter-spacing="1">REGIONAL PERFORMANCE</text>
+    <g fill="#D4A24E">
+      <rect x="100" y="300" width="24" height="34" rx="3"/>
+      <rect x="140" y="280" width="24" height="54" rx="3" opacity="0.9"/>
+      <rect x="180" y="260" width="24" height="74" rx="3"/>
+      <rect x="220" y="290" width="24" height="44" rx="3" opacity="0.7"/>
+      <rect x="260" y="248" width="24" height="86" rx="3"/>
+      <rect x="300" y="272" width="24" height="62" rx="3" opacity="0.8"/>
+    </g>
+    <line x1="90" y1="334" x2="360" y2="334" stroke="#232C3B"/>
+  </g>
+
+  <!-- pipeline run log -->
+  <g>
+    <rect x="410" y="204" width="326" height="150" rx="12" fill="#141B26" stroke="#232C3B"/>
+    <text x="430" y="228" font-family="ui-monospace, monospace" font-size="10" fill="#6B7889" letter-spacing="1">LATEST PIPELINE RUN</text>
+    <g font-family="ui-monospace, monospace" font-size="10">
+      <path d="M430 248 l5 5 l10 -10" stroke="#7CC98A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="450" y="253" fill="#93A1B0">Schema alignment — passed</text>
+      <path d="M430 270 l5 5 l10 -10" stroke="#7CC98A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="450" y="275" fill="#93A1B0">12,480 records validated</text>
+      <path d="M430 292 l5 5 l10 -10" stroke="#7CC98A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="450" y="297" fill="#93A1B0">Star schema load — complete</text>
+      <circle cx="435" cy="316" r="4" fill="#E6B563"/>
+      <text x="450" y="319" fill="#E6B563">Audit log written</text>
+    </g>
+  </g>
+
+  <!-- geographic map hint -->
+  <rect x="64" y="370" width="672" height="60" rx="10" fill="#141B26" stroke="#232C3B"/>
+  <text x="84" y="393" font-family="ui-monospace, monospace" font-size="10" fill="#8A6A34" letter-spacing="1">GEOGRAPHIC DRILL-DOWN</text>
+  <circle cx="120" cy="412" r="5" fill="#D4A24E"/>
+  <circle cx="180" cy="408" r="7" fill="#E6B563"/>
+  <circle cx="250" cy="415" r="4" fill="#8A6A34"/>
+  <circle cx="320" cy="406" r="6" fill="#D4A24E"/>
+  <circle cx="400" cy="412" r="5" fill="#E6B563"/>
+  <text x="600" y="415" font-family="ui-monospace, monospace" font-size="10" fill="#6B7889">Power BI · DAX · Power Query</text>
+</svg>

@@ -1,0 +1,47 @@
+/**
+ * Each theme is a full palette, not a light/dark inversion of one accent.
+ * Values are "R G B" triplets so Tailwind's <alpha-value> opacity syntax works.
+ */
+
+:root,
+[data-theme="amber"] {
+  color-scheme: dark;
+  --c-ink-950: 10 13 18;
+  --c-ink-900: 13 17 23;
+  --c-ink-800: 18 24 34;
+  --c-ink-700: 26 34 48;
+  --c-ink-600: 36 46 63;
+  --c-ink-border: 35 44 59;
+  --c-paper-100: 244 246 248;
+  --c-paper-200: 232 236 240;
+  --c-paper-300: 199 207 217;
+  --c-paper-400: 147 161 176;
+  --c-paper-500: 107 120 137;
+  --c-signal: 212 162 78;
+  --c-signal-bright: 230 181 99;
+  --c-signal-dim: 138 106 52;
+  --c-signal-50: 247 236 215;
+  --shadow-strength: 0.55;
+  --map-tiles: dark;
+}
+
+[data-theme="porcelain"] {
+  color-scheme: light;
+  --c-ink-950: 240 236 227;
+  --c-ink-900: 246 243 236;
+  --c-ink-800: 255 255 255;
+  --c-ink-700: 234 228 216;
+  --c-ink-600: 214 205 188;
+  --c-ink-border: 214 205 188;
+  --c-paper-100: 28 25 21;
+  --c-paper-200: 48 44 38;
+  --c-paper-300: 87 81 71;
+  --c-paper-400: 124 116 103;
+  --c-paper-500: 138 130 115;
+  --c-signal: 163 111 34;
+  --c-signal-bright: 189 134 48;
+  --c-signal-dim: 116 79 26;
+  --c-signal-50: 250 238 216;
+  --shadow-strength: 0.16;
+  --map-tiles: light;
+}

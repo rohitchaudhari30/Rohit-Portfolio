@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 import { useTheme, themes } from "@/context/ThemeContext";
 import { locationData } from "@/data/location";
 
-// Esri World Canvas basemaps (clean, dark-mode, no API key, zero watermarks)
+// High-quality, industry-standard basemaps (100% free, zero watermarks)
 const TILE_SOURCES = {
   dark: {
     url: "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
@@ -12,9 +12,9 @@ const TILE_SOURCES = {
       '&copy; <a href="https://www.esri.com/" target="_blank" rel="noopener noreferrer">Esri</a> &mdash; Esri, DeLorme, NAVTEQ',
   },
   light: {
-    url: "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+    url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
     attribution:
-      '&copy; <a href="https://www.esri.com/" target="_blank" rel="noopener noreferrer">Esri</a> &mdash; Esri, DeLorme, NAVTEQ',
+      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors',
   },
 } as const;
 

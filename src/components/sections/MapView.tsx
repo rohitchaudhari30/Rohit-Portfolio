@@ -36,7 +36,7 @@ export default function MapView() {
       zoom: 12,
       scrollWheelZoom: false,
       zoomControl: false,
-      attributionControl: true,
+      attributionControl: false,
     });
 
     L.control.zoom({ position: "bottomright" }).addTo(map);

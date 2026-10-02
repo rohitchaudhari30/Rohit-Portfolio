@@ -1,10 +1,12 @@
 import type { ReactNode, AnchorHTMLAttributes } from "react";
+import { Link } from "react-router-dom";
 
 type Variant = "primary" | "secondary" | "ghost";
 
 interface LinkButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   variant?: Variant;
   children: ReactNode;
+  to?: string;
 }
 
 const base =
@@ -18,10 +20,31 @@ const variants: Record<Variant, string> = {
   ghost: "bg-transparent text-paper-300 hover:text-paper-100 hover:bg-ink-800",
 };
 
-export default function LinkButton({ variant = "primary", className = "", children, ...props }: LinkButtonProps) {
-  const isExternal = props.href?.startsWith("http");
+export default function LinkButton({ variant = "primary", className = "", children, href, to, onClick, ...props }: LinkButtonProps) {
+  const targetUrl = to || href || "";
+  const isExternal =
+    targetUrl.startsWith("http://") ||
+    targetUrl.startsWith("https://") ||
+    targetUrl.startsWith("mailto:") ||
+    targetUrl.startsWith("tel:") ||
+    targetUrl.endsWith(".pdf");
+
+  if (!isExternal && targetUrl) {
+    return (
+      <Link
+        to={targetUrl}
+        onClick={onClick as any}
+        className={`${base} ${variants[variant]} ${className}`}
+      >
+        {children}
+      </Link>
+    );
+  }
+
   return (
     <a
+      href={targetUrl}
+      onClick={onClick}
       className={`${base} ${variants[variant]} ${className}`}
       {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       {...props}

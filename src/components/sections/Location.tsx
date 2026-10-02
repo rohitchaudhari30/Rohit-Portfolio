@@ -1,4 +1,4 @@
-import { MapPin, Globe, Navigation } from "lucide-react";
+import { MapPin, Navigation } from "lucide-react";
 import { locationData } from "@/data/location";
 import Container from "@/components/ui/Container";
 import LinkButton from "@/components/ui/LinkButton";
@@ -21,15 +21,6 @@ export default function Location() {
               <h3 className="font-display text-2xl font-semibold text-paper-100">
                 {locationData.city}, {locationData.region}
               </h3>
-            </div>
-
-            <div className="space-y-2">
-              {locationData.remoteFriendly && (
-                <p className="flex items-center gap-2 text-sm text-paper-400">
-                  <Globe size={14} className="text-signal" />
-                  {locationData.relocation || "Remote & Hybrid OK"}
-                </p>
-              )}
             </div>
 
             <LinkButton href={directionsUrl} variant="secondary" className="w-fit text-xs">
